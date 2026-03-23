@@ -8,8 +8,9 @@
 /*
  * create Data item
  */
-Data *createData( int val ) {
-    Data *new = malloc( sizeof(Data) );
+Data *createData(int val)
+{
+    Data *new = malloc(sizeof(Data));
     new->value = val;
     return new;
 }
@@ -17,8 +18,9 @@ Data *createData( int val ) {
 /*
  * create Node item
  */
-Node *createNode( Data *data ) {
-    Node *new = malloc( sizeof(Node) );
+Node *createNode(Data *data)
+{
+    Node *new = malloc(sizeof(Node));
     new->data = data;
     new->next = NULL;
     return new;
@@ -27,8 +29,10 @@ Node *createNode( Data *data ) {
 /*
  * free a Node and the attached Data
  */
-void freeNode( Node *node ) {
-    if( node != NULL ) {
+void freeNode(Node *node)
+{
+    if(node != NULL)
+    {
         free(node->data);         // free Data first
         free(node);               // then the Node
     }
@@ -38,8 +42,10 @@ void freeNode( Node *node ) {
 /*
  * free all nodes in the linked structure
  */
-void freeNodes( Node *node ) {
-    while( node!=NULL ) {
+void freeNodes(Node *node)
+{
+    while(node!=NULL)
+    {
         Node *next=node->next;
         freeNode(node);         // note that we have to retain a pointer to the next node before free'ing
         node=next;
@@ -50,9 +56,11 @@ void freeNodes( Node *node ) {
 /*
  * iteration-based traversal 
  */
-void traverseI( Node *start ) {  
+void traverseI(Node *start)
+{  
 
-    for( Node *node=start; node!=NULL; node=node->next ) {
+    for(Node *node=start; node!=NULL; node=node->next)
+    {
         printf(" %d",node->data->value);
     }
     printf("\n");
@@ -62,7 +70,8 @@ void traverseI( Node *start ) {
 /*
  * while-based traversal
  */
-void traverseW( Node *node ) {  
+void traverseW(Node *node)
+{  
 
     // your implementation
     
@@ -72,7 +81,8 @@ void traverseW( Node *node ) {
 /*
  * recursive traversal
  */
-void traverseR( Node *node ) {  
+void traverseR(Node *node)
+{  
     
     // remember the golden rules
     // base case, recursive call, approach the base case

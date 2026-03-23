@@ -5,7 +5,8 @@
 #include "node_structures.h"
 #include "node.h"
 
-int main( void ) {
+int main(void)
+{
 
     // create some nodes
     Node *first = createNode(createData(1));
@@ -17,10 +18,10 @@ int main( void ) {
     second->next = third;
     
     // print the data by following links
-    traverseI( first );
+    traverseI(first);
 
     // free all node memory (using traversal)
-    freeNodes( first );
+    freeNodes(first);
 
     return 0;
 }
