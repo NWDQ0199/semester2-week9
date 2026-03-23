@@ -9,13 +9,13 @@ int main(void)
 {
 
     // create some nodes
-    Node *first = createNode(createData(1));
-    Node *second = createNode(createData(2));
-    Node *third = createNode(createData(3));
+    Node* first=createNode(createData(1));
+    Node* second=createNode(createData(2));
+    Node* third=createNode(createData(3));
 
     // link the nodes
-    first->next = second;
-    second->next = third;
+    first->next=second;
+    second->next=third;
     
     // print the data by following links
     traverseI(first);
