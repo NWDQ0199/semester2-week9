@@ -91,3 +91,10 @@ void freeStack(Stack* stack)
 	free(stack->data);		         // free stack Data array
 	return;
 }
+
+//frees stack contents as well as the stack
+void freeStack2(Stack* stack)
+{
+	freeStack(stack);
+	free(stack);
+}
