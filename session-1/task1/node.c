@@ -10,9 +10,9 @@
  */
 Data* createData(int val)
 {
-    Data* new=malloc(sizeof(Data));
-    new->value=val;
-    return new;
+	Data* new=malloc(sizeof(Data));
+	new->value=val;
+	return new;
 }
 
 /*
@@ -20,10 +20,10 @@ Data* createData(int val)
  */
 Node* createNode(Data* data)
 {
-    Node* new=malloc(sizeof(Node));
-    new->data=data;
-    new->next=NULL;
-    return new;
+	Node* new=malloc(sizeof(Node));
+	new->data=data;
+	new->next=NULL;
+	return new;
 }
 
 /*
@@ -31,12 +31,12 @@ Node* createNode(Data* data)
  */
 void freeNode(Node* node)
 {
-    if(node!=NULL)
-    {
-        free(node->data);         // free Data first
-        free(node);               // then the Node
-    }
-    return;
+	if(node!=NULL)
+	{
+		free(node->data);		 // free Data first
+		free(node);			   // then the Node
+	}
+	return;
 }
 
 /*
@@ -44,27 +44,26 @@ void freeNode(Node* node)
  */
 void freeNodes(Node* node)
 {
-    while(node!=NULL)
-    {
-        Node* next=node->next;
-        freeNode(node);         // note that we have to retain a pointer to the next node before free'ing
-        node=next;
-    }
-    return;
+	while(node!=NULL)
+	{
+		Node* next=node->next;
+		freeNode(node);		 // note that we have to retain a pointer to the next node before free'ing
+		node=next;
+	}
+	return;
 }
 
 /*
  *  iteration-based traversal 
  */
 void traverseI(Node* start)
-{  
-
-    for(Node* node=start; node!=NULL; node=node->next)
-    {
-        printf(" %d",node->data->value);
-    }
-    printf("\n");
-    return;
+{
+	for(Node* node=start;node!=NULL;node=node->next)
+	{
+		printf(" %d",node->data->value);
+	}
+	printf("\n");
+	return;
 }
 
 /*
@@ -72,20 +71,30 @@ void traverseI(Node* start)
  */
 void traverseW(Node* node)
 {  
-
-    // your implementation
-    
-    return;
+	while(node!=NULL)
+	{
+		printf(" %d",node->data->value);
+		node=node->next;
+	}
+	printf("\n");
+	// your implementation
+	
+	return;
 }
 
 /*
  * recursive traversal
  */
 void traverseR(Node* node)
-{  
-    
-    // remember the golden rules
-    // base case, recursive call, approach the base case
-    
+{
+	// remember the golden rules
+	// base case, recursive call, approach the base case
+	if(node==NULL)
+	{
+		printf("\n");
+		return;
+	}
+	printf(" %d",node->data->value);
+	traverseR(node->next);
 }
 
