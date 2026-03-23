@@ -15,11 +15,12 @@ int main(void)
 
     // push a node
     push(stack,1);
+    push(stack,2);
     traverseI(stack->top);  // display the stack
-	Node* one=pop(stack);
-	printf(one->value);
+	Node* node=pop(stack);
+	printf(" %i",node->data->value);
 
-	freeNode(one);
+	freeNode(node);
 	freeStack(stack);
 
     return 0;

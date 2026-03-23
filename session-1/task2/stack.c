@@ -20,7 +20,7 @@ Stack* createStack(void)
 
 /*
  * free all memory used by stack
-*/
+ */
 void freeStack(Stack* stack)
 {
 	freeNodes(stack->top);          // free stack memory
@@ -37,7 +37,6 @@ void push(Stack* stack, int val)
 	new->next=stack->top;           // add node at top
 	stack->top=new;                 // move stack top
 	stack->size++;                  // increase stack size
-
 	return;
 }
 
