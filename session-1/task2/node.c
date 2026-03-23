@@ -38,9 +38,11 @@ void freeNode( Node *node ) {
 /*
  * free all nodes in the linked structure
  */
-void freeNodes( Node *node ) {
-    while( node!=NULL ) {
-        Node *next=node->next;
+void freeNodes(Node* node)
+{
+    while(node!=NULL)
+	{
+        Node* next=node->next;
         freeNode(node);
         node=next;
     }
@@ -50,9 +52,11 @@ void freeNodes( Node *node ) {
 /*
  * iteration-based traversal 
  */
-void traverseI( Node *start ) {  
+void traverseI( Node *start )
+{  
 
-    for( Node *node=start; node!=NULL; node=node->next ) {
+    for(Node* node=start;node!=NULL;node=node->next)
+	{
         printf(" %d",node->data->value);
     }
     printf("\n");
@@ -62,7 +66,8 @@ void traverseI( Node *start ) {
 /*
  * while-based traversal
  */
-void traverseW( Node *node ) {  
+void traverseW(Node* node)
+{
 
     // implementation from task1
 
@@ -72,7 +77,8 @@ void traverseW( Node *node ) {
 /*
  * recursive traversal
  */
-void traverseR( Node *node ) {  
+void traverseR(Node* node)
+{
     
     // implementation from task1
     

@@ -7,19 +7,20 @@
 #include "stack_structures.h"
 #include "stack.h"
 
-int main( void ) {
+int main(void)
+{
 
     // create an empty stack
-    Stack *stack = createStack();
+    Stack* stack=createStack();
 
     // push a node
     push(stack,1);
     traverseI(stack->top);  // display the stack
+	Node* one=pop(stack);
+	printf(one->value);
 
-    // free stack memory
-    freeNodes( stack->top );
-    // free stack
-    free(stack);
+	freeNode(one);
+	freeStack(stack);
 
     return 0;
 }
