@@ -9,9 +9,9 @@
  */
 Data* createData(int val)
 {
-  Data* new=malloc(sizeof(Data));
-  new->value=val;
-  return new;
+	Data* new=malloc(sizeof(Data));
+	new->value=val;
+	return new;
 }
 
 /*

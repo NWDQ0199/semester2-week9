@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +6,6 @@
 
 int main(void)
 {
-
     Stack* stack=createStack();
 
     // push() - add some data to the stack
