@@ -9,5 +9,8 @@ typedef struct _queue {
     struct _data **data;    // queue array of Data*
     
     // define indices for queue back, front and length
+	int back;
+	int front;
+	int length;
     
 } Queue;
