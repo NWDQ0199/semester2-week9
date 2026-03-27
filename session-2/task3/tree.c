@@ -111,3 +111,9 @@ void deallocateTree(Node* loc)
     }
     return;
 }
+
+void freeTree(Tree* tree)
+{
+    deallocateTree(tree->root);
+    free(tree);
+}

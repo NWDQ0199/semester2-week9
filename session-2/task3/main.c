@@ -26,8 +26,7 @@ int main(void)
     traversePre(tree->root);
 
     // free memory
-    deallocateTree(tree->root);
-    free(tree);
+	freeTree(tree);
 
     return 0;
 }
