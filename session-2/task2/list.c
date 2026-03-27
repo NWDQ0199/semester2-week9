@@ -39,7 +39,7 @@ void enlargeList(List* list)
 }
 
 /*
- * insert a Data item onto the List 
+ * insert a Data item into the List 
  */
 void insert(List* list, Data* new, int loc)
 {
@@ -67,7 +67,7 @@ void insert(List* list, Data* new, int loc)
 }
 
 /*
- * remove the front Data item from the List
+ * remove a Data item from the List
  */
 Data* delete(List* list, int loc)
 {
@@ -80,7 +80,7 @@ Data* delete(List* list, int loc)
 	}
 
     // check for invalid loc
-	if(0<loc||list->length<=loc)
+	if(loc<0||list->length<=loc)
 	{
 		return NULL;
 	}
@@ -93,9 +93,10 @@ Data* delete(List* list, int loc)
 	{
 		list->data[i-1]=list->data[i];
 	}
+	list->data[list->length-1]=NULL; //prevent double free of last element during list freeing
 
     // decrease list length
-	length--;
+	list->length--;
 
     return new;
 }
@@ -119,11 +120,11 @@ void displayList(List* list)
  */
 void freeList(List* list)
 {
-    for(int k=0; k<list->size; ++k)
+    for(int k=0;k<list->size;k++)
 	{
 		free(list->data[k]); // free List Data item
 	}
     free(list->data);        // free List Data array
-    free(list);                // free List
+    free(list);              // free List
     return;
 }
