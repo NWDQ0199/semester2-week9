@@ -22,6 +22,7 @@ int main( void ) {
 
     // free list memory
     freeNodes( list->head );
+	free(list);
 
     return 0;
 }

@@ -1,6 +1,7 @@
 
 CC = gcc
-CFLAGS = -Wall -Wextra
+#CFLAGS = -Wall -Wextra
+CFLAGS = -Wextra
 
 SRC = main.c node.c list.c
 OBJ = $(SRC:.c=.o)
