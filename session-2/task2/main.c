@@ -12,7 +12,7 @@ int main(void)
 
     // insert() - add some data to the list
     insert(list, createData(1), 0); // add with value 1 at index 0
-    insert(list, createData(2), 0); // add with value 1 at index 0
+    insert(list, createData(2), 1); // add with value 1 at index 0
     displayList(list);
 
 	Data* data=delete(list,1);
