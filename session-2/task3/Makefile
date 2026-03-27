@@ -8,6 +8,7 @@ EXE = tree
 
 $(EXE): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
+	mv $(OBJ) obj
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
