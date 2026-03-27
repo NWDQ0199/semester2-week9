@@ -7,13 +7,13 @@
 #include "list_structures.h"
 #include "list.h"
 
-int main( void ) {
-
+int main(void)
+{
     // create an empty list
-    List *list = createList();
+    List *list=createList();
 
     // add some nodes
-    addNode(list,(Node *)NULL,1); // add at head - special case - pass NULL
+    addNode(list,(Node*)NULL,1); // add at head - special case - pass NULL
 
     // display the list
 
@@ -21,7 +21,7 @@ int main( void ) {
     // deallocate deleted nodes - test with valgrind to check this
 
     // free list memory
-    freeNodes( list->head );
+    freeNodes(list->head);
 	free(list);
 
     return 0;

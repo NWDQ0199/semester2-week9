@@ -10,9 +10,9 @@
 /*
  * allocate and initialise a list structure
  */
-List *createList(void)
+List* createList(void)
 {
-    List *new=malloc(sizeof(List));
+    List* new=malloc(sizeof(List));
     new->head=NULL;
     new->size=0;
     return new;
@@ -21,17 +21,17 @@ List *createList(void)
 /*
  * add a node after the location (pass loc=NULL to add at the head)
  */
-void addNode(List *list, Node *loc, int val)
+void addNode(List* list, Node* loc, int val)
 {
-    Node *new=createNode(createData(val));
+    Node* new=createNode(createData(val));
 
-    if(loc == NULL)
-	{         // adding at head (special case)
+    if(loc==NULL)             // adding at head (special case)
+	{
         new->next=list->head;
         list->head=new;
     }
     else
-	{                      // adding at other locations - after loc
+	{                         // adding at other locations - after loc
         new->next=loc->next;
         loc->next=new;
     }
@@ -43,14 +43,16 @@ void addNode(List *list, Node *loc, int val)
 /*
  * remove node after the location (pass loc=NULL to add at the head)
  */
-Node *removeNode(List *list, Node *loc)
+Node* removeNode(List* list, Node* loc)
 {
-    Node *removed;
+    Node* removed;
 
-    if(list->size == 0)           // check if List is already empty
-        return NULL;
+    if(list->size==0)           // check if List is already empty
+    {
+		return NULL;
+	}
     
-    if(loc == NULL)             // head is special case
+    if(loc==NULL)             // head is special case
 	{
         removed=list->head;
         list->head=removed->next;
