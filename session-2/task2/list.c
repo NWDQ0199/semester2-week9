@@ -39,7 +39,7 @@ void enlargeList(List* list)
 }
 
 /*
- * insert a Data item into the List 
+ * insert a Data item into the List, before the element at position loc 
  */
 void insert(List* list, Data* new, int loc)
 {
