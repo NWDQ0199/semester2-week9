@@ -49,13 +49,13 @@ void insert(List* list, Data* new, int loc)
         enlargeList(list);
 	}
 
-    if(loc>list->length || loc<0) // check for invalid loc
+    if(loc>list->length||loc<0) // check for invalid loc
 	{
         return;
 	}
 
     // shuffle list up to create a gap at index loc
-    for(int k=list->length; k>loc; --k)
+    for(int k=list->length;k>loc;k--)
 	{
         list->data[k]=list->data[k-1];
 	}
@@ -74,14 +74,28 @@ Data* delete(List* list, int loc)
     Data* new=NULL;
     
     // check for empty List
+	if(list==NULL||list->data==NULL||list->length==0)
+	{
+		return NULL;
+	}
 
     // check for invalid loc
+	if(0<loc||list->length<=loc)
+	{
+		return NULL;
+	}
 
     // extract Data item
+	new=list->data[loc];
     
     // shuffle list down to remove the gap
+	for(int i=loc+1;i<list->length;i++)
+	{
+		list->data[i-1]=list->data[i];
+	}
 
     // decrease list length
+	length--;
 
     return new;
 }
@@ -89,10 +103,13 @@ Data* delete(List* list, int loc)
 /*
  * display List data - traverse list from front to back
  */
-void displayList (List* list) {
+void displayList(List* list)
+{
     printf("List length %d\n",list->length);
-    for(int k=0; k<list->length; ++k)
+    for(int k=0;k<list->length;k++)
+	{
         printf(" %d",list->data[k]->value);
+	}
     printf("\n");
     return;
 }
